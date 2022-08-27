@@ -1,0 +1,7 @@
+{
+  "projects": {
+    "default": "learnasl-1bb30",
+    "staging": "learnasl-1bb30"
+  },
+  "targets": {}
+}

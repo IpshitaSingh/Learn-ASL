@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Learn ASL</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+<script defer src="/__/firebase/8.3.1/firebase.js"></script>
+   <!-- include only the Firebase features as you need -->
+   <script defer src="/__/firebase/8.3.1/firebase-database.js"></script>
+   <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+  <!-- Template Main CSS File -->
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Arsha - v4.3.0
+  * Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top header-inner-pages">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="index.html">Learn ASL</a></h1>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+                <li class = "logged-in"><a class="nav-link scrollto" href="index.html">Home</a></li>
+                <li class = "logged-out"><a class="nav-link scrollto" href="index.html">Home</a></li>
+                <li class = "logged-in"><a class="nav-link scrollto" href="gestures.html">Signs</a></li>
+                <li class = "logged-out"><a class="nav-link scrollto" href="login.html">Login</a></li>
+                <li class = "logged-in"><a class="nav-link scrollto active" href="profile.html">Profile</a></li>
+                <li class = "logged-in"><a class="nav-link scrollto" href = "index.html" onclick="logout()">Log Out</a></li>
+            </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+  <hr>
+  <hr>
+  <hr>
+
+  <main id = "profile">
+      <div class="row py-5 px-4">
+    <div class="col-md-5 mx-auto">
+        <!-- Profile widget -->
+        <div class="bg-white shadow rounded overflow-hidden">
+            <div class="px-4 pt-0 pb-4 cover">
+                <div class="media align-items-end profile-head">
+                    <div class="profile mr-3" id = "imagestuff"><img src="" alt="..." width="130" class="rounded mb-2 img-thumbnail"></div>
+                    <div class="media-body mb-5 text-white">
+                        <h3 class="mt-0 mb-2" id = "name"></h3>
+                        <p id = "email"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-light p-4 d-flex justify-content-end text-center">
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item">
+                        <h5 class="font-weight-bold mb-0 d-block"></h5><small class="text-muted"> <i class="fas fa-image mr-1"></i></small>
+                    </li>
+                    <li class="list-inline-item">
+                        <h5 class="font-weight-bold mb-0 d-block"></h5><small class="text-muted"> <i class="fas fa-user mr-1"></i></small>
+                    </li>
+                    <li class="list-inline-item">
+                        <h5 class="font-weight-bold mb-2 d-block">.</h5><small class="text-muted"> <i class="fas fa-user mr-1"></i>.</small>
+                    </li>
+                </ul>
+            </div>
+            <div class="px-4 py-3">
+                <h5 class="mb-0">About</h5>
+                <div class="p-4 rounded shadow-sm bg-light">
+                    <form class="col">
+                        <div style="margin: 1rem;" class="form-group">
+                            <input type="text" class="form-control whitebg" id="about" value="" readonly>
+                        </div>
+                        <a style="margin-left: 1rem;" id="editButton" class="btn btn-outline-dark">Edit</a>
+                        <a style="margin-left: 1rem;" id="saveButton" class="btn btn-outline-dark">Save</a>
+                    </form>
+                </div>
+            </div>
+            <div class="px-4 py-3">
+                <h5 class="mb-0">Progress</h5>
+                <div class="p-4 rounded shadow-sm bg-light">
+                    
+                    <div class="progress" id = "bar">
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="py-4 px-4">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                    <h5 class="mb-0">Mastered Signs</h5>
+                </div>
+                <div class="row" id = "gestures">
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  </main>
+
+ <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-6 footer-contact">
+            <h3>Learn ASL</h3>
+          </div>
+          <div class="col-lg-6 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.html">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="gestures.html">Gestures</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom clearfix">
+      <div class="credits">
+        Developed by Ipshita Singh
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/gestures.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/profile.js"></script>
+
+</body>
+</html>
